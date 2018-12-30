@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <time.h>
+
+clock_t start, end;
 
 // int main() {
 //     printf("Hello, World! \n");
@@ -173,33 +176,279 @@
 // }
 
 
+// int main() {
+//     char ch;
+
+//     short sh;
+//     int i;
+//     long lo;
+
+//     float fl;
+//     double du;
+
+//     printf("enter char type : ");
+//     scanf("%c", &ch);
+
+//     printf("enter short type : ");
+//     scanf("%hd", &sh);
+//     printf("enter int type : ");
+//     scanf("%d", &i);
+//     printf("enter long type : ");
+//     scanf("%ld", &lo);
+
+//     printf("enter float type : ");
+//     scanf("%f", &fl);
+//     printf("enter double type : ");
+//     scanf("%lf", &du);
+
+//     printf("char : %c, short : %d, int : %d ", ch, sh, i);
+//     printf("long : %d, float : %f, double : %F \n", lo, fl, du);
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int i;
+    
+//     printf("enter number! : ");
+//     scanf("%d", &i);
+
+//     if(i == 7) {
+//         printf("you entered lucky number 7");
+//     }
+
+//     return 0;
+// }
+
+
+// int main() {
+//     double i, j;
+//     printf("enter two numbers to divide : ");
+//     scanf("%lf %lf", &i, &j);
+
+//     if(j == 0) {
+//         printf("cannot divide by zero. \n");
+//         return 1;
+//     }
+//     printf("%f is divided by %f : %f \n", i, j, i / j);
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int score;
+
+//     printf("enter your mathematics score : ");
+//     scanf("%d", &score);
+
+//     if(score >= 90) {
+//         printf("you passed! \n");
+//     }
+
+//     if(score < 90) {
+//         printf("you failed! \n");
+//     }
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int i, sum = 0;
+//     for(i = 1; i < 21; ++i) {
+//         sum += i;
+//     }
+//     printf("sum of 1~20 : %d \n", sum);
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int N, i, j;
+
+//     printf("enter a number : ");
+//     scanf("%d", &N);
+//     for(i = 1; i < N+1; ++i) {
+//         for(j = 0; j < N-i; ++j)
+//             printf(" ");
+//         for(j = 0; j < 2*i-1; ++j)
+//             printf("*");
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+// int main() {
+//     int N, i, j;
+    
+//     printf("enter a number : ");
+//     scanf("%d", &N);
+//     for(i = 1; i < N+1; ++i) {
+//         for(j = 0; j < i-1; ++j)
+//             printf(" ");
+//         for(j = 0; j < 2*(N-i)+1; ++j)
+//             printf("*");
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+// int main() {
+//     int sum = 0, count = 0;
+//     for(int i = 0; i <= 1000; ++i) {
+//         if(i%3==0 || i%5==0)
+//             sum += i;
+//     }
+//     printf("sum : %d \n", sum);
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int i, sum = 0;
+    
+//     for(i = 1; 3*i <= 1000; ++i) {
+//         sum += 3*i;
+//     }
+
+//     for(i = 1; 5*i <= 1000; ++i) {
+//         if((5*i)%15 != 0)
+//             sum += 5*i;
+//     }
+//     printf("sum : %d \n", sum);
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int first = 0, second = 1, n = 0, sum = 0;
+//     while(1) {
+//         if(n == 0) {
+//             n = 1;
+//         }
+//         else {
+//             n = first + second;
+//             if(n > 1000000)
+//                 break;
+//             first = second;
+//             second = n;
+//         }
+//         printf("n = %d \n", n);
+        
+//         if(n % 2 == 0)
+//             sum += n;
+//     }
+//     printf("sum : %d \n", sum);
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int n;
+//     long long result = 1;
+    
+//     printf("enter a number : ");
+//     scanf("%d", &n);
+
+//     for(int i = 1; i < n+1; i++) {
+//         result *= i;
+//     }
+//     printf("result : %lld", result);
+//     return 0;
+// }
+
+
+// int main() {
+//     int a, b, c, count = 0;
+//     for(a = 3; a < 1998 ; a++) {
+//         for(b = 2; a > b ; b++) {
+//             for(c = 1 ; b > c ; c++) {
+//                 if(a+b+c == 2000) {
+//                     printf("a: %d, b: %d, c: %d \n", a, b, c);
+//                     count++;
+//                 }
+//             }
+//         }
+//     }
+//     printf("count : %d \n", count);
+//     return 0;
+// }
+
+
+// int main() {
+//     int i = 2, n = 0;
+
+//     printf("enter a number : ");
+//     scanf("%d", &n);
+
+//     printf("%d =", n);
+//     while(n != 1) {
+//         if(n % i == 0) {
+//             n /= i;
+//             if(n == 1)
+//                 printf(" %d\n", i);
+//             else {
+//                 printf(" %d *", i);
+//                 i = 2;
+//             }
+//         }
+//         else
+//             i++;
+//     }
+//     return 0;
+// }
+
+
+// int main() {
+//     int i = 2;
+//     unsigned long long n = 9223372036854775808;
+//     // printf("enter a number : ");
+//     // scanf("%d", &n);
+
+//     start = clock();
+//     printf("%llu =", n);
+//     while(n != 1) {
+//         if(n % i == 0) {
+//             n /= i;
+//             if(n == 1)
+//                 printf(" %d\n", i);
+//             else {
+//                 printf(" %d *", i);
+//                 i = 2;
+//             }
+//         }
+//         else
+//             i++;
+//     }
+//     end = clock();
+//     printf("elapsed time %ld ms. \n", end-start);
+
+//     return 0;
+// }
+
+
 int main() {
-    char ch;
-
-    short sh;
-    int i;
-    long lo;
-
-    float fl;
-    double du;
-
-    printf("enter char type : ");
-    scanf("%c", &ch);
-
-    printf("enter short type : ");
-    scanf("%hd", &sh);
-    printf("enter int type : ");
-    scanf("%d", &i);
-    printf("enter long type : ");
-    scanf("%ld", &lo);
-
-    printf("enter float type : ");
-    scanf("%f", &fl);
-    printf("enter double type : ");
-    scanf("%lf", &du);
-
-    printf("char : %c, short : %d, int : %d ", ch, sh, i);
-    printf("long : %d, float : %f, double : %F \n", lo, fl, du);
-
+    start = clock();
+    int a, b, c, count = 0;
+    for(a = 3; a < 1998 ; a++) {
+        for(b = 2; a > b ; b++) {
+            for(c = 1 ; b > c ; c++) {
+                if(a+b+c == 2000) {
+                    count++;
+                }
+            }
+        }
+    }
+    end = clock();
+    printf("count : %d \n", count);
+    printf("elapsed time %ld ms. \n", end-start);
     return 0;
 }
