@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <time.h>
 
+#define FALSE 0
+#define TRUE !FALSE
+
 clock_t start, end;
 
 // int main() {
@@ -435,20 +438,125 @@ clock_t start, end;
 // }
 
 
+// int main() {
+//     start = clock();
+//     int a, b, c, count = 0;
+//     for(a = 3; a < 1998 ; a++) {
+//         for(b = 2; a > b ; b++) {
+//             for(c = 1 ; b > c ; c++) {
+//                 if(a+b+c == 2000) {
+//                     count++;
+//                 }
+//             }
+//         }
+//     }
+//     end = clock();
+//     printf("count : %d \n", count);
+//     printf("elapsed time %ld ms. \n", end-start);
+//     return 0;
+// }
+
+
+// int main() {
+//     int a;
+//     double b;
+
+//     b = 2.4;
+//     a = (int)b;
+
+//     printf("%d", a);
+    
+//     return 0;
+// }
+
+
+// int main() {
+//     float f;
+//     int i;
+
+//     printf("enter a real number : ");
+//     scanf("%f", &f);
+//     if(f < 0)
+//         f = -f;
+//     i = (int)(f * 100) % 100;
+//     printf("i = %d \n", i);
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int prime[1000];
+//     int i, index = 1, n = 3, flag = TRUE;
+
+//     prime[0] = 2;
+//     prime[1] = 3;
+//     start = clock();
+//     while(index != 1000) {
+//         for(i = 1; i <= index; i++) {
+//             if((2*n-1) % prime[i] == 0) {
+//                 flag = FALSE;
+//                 break;
+//             }
+//             flag = TRUE;
+//         }
+//         if(flag != FALSE && i > index)
+//             prime[++index] = 2*n-1;
+//         n++;
+//     }
+//     for(i = 0; i < index; i++) {
+//         printf("#%d prime number : %d \n", i+1, prime[i]);
+//     }
+//     end = clock();
+//     printf("elapsed time %ld ms. \n", end-start);
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int a = 2;
+
+//     printf("%p \n", &a);
+    
+//     return 0;
+// }
+
+
+// int main() {
+//     int a, b;
+//     const int* pa = &a;
+
+//     // *pa = 3; // error
+//     pa = &b;
+
+//     return 0;
+// }
+
+
+// int main() {
+//     int a, b;
+//     int* const pa = &a;
+
+//     *pa = 3; 
+//     // pa = &b; // error
+
+//     return 0;
+// }
+
+
 int main() {
-    start = clock();
-    int a, b, c, count = 0;
-    for(a = 3; a < 1998 ; a++) {
-        for(b = 2; a > b ; b++) {
-            for(c = 1 ; b > c ; c++) {
-                if(a+b+c == 2000) {
-                    count++;
-                }
-            }
-        }
-    }
-    end = clock();
-    printf("count : %d \n", count);
-    printf("elapsed time %ld ms. \n", end-start);
+    int *arr[3];
+    int a = 1, b = 2, c = 3;
+    arr[0] = &a;
+    arr[1] = &b;
+    arr[2] = &c;
+
+    printf("a : %d, *arr[0] : %d \n", a, *arr[0]);
+    printf("b : %d, *arr[1] : %d \n", b, *arr[1]);
+    printf("c : %d, *arr[2] : %d \n", c, *arr[2]);
+
+    printf("&a : 0x%p, arr[0] : 0x%p \n", &a, arr[0]);
+
     return 0;
 }
