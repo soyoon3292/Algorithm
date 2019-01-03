@@ -545,18 +545,131 @@ clock_t start, end;
 // }
 
 
+// int main() {
+//     int *arr[3];
+//     int a = 1, b = 2, c = 3;
+//     arr[0] = &a;
+//     arr[1] = &b;
+//     arr[2] = &c;
+
+//     printf("a : %d, *arr[0] : %d \n", a, *arr[0]);
+//     printf("b : %d, *arr[1] : %d \n", b, *arr[1]);
+//     printf("c : %d, *arr[2] : %d \n", c, *arr[2]);
+
+//     printf("&a : 0x%p, arr[0] : 0x%p \n", &a, arr[0]);
+
+//     return 0;
+// }
+
+
+// int countPrime(int num, int *prime) {
+//     int i, index = 1, n = 3, flag = TRUE, count = 2;
+
+//     prime[0] = 2;
+//     prime[1] = 3;
+
+//     while(index <= 1000 && 2*n-1 <= num) {
+//         for(i = 1; i <= index; i++) {
+//             if((2*n-1) % prime[i] == 0) {
+//                 flag = FALSE;
+//                 break;
+//             }
+//             flag = TRUE;
+//         }
+//         if(flag != FALSE && i > index) {
+//             prime[++index] = 2*n-1;
+//             count++;
+//             }
+//         n++;
+//     }
+
+//     return count;
+// }
+
+// int main() {
+//     int num, count;
+//     int prime[1000];
+
+//     printf("enter a number : ");
+//     scanf("%d", &num);
+
+//     count = countPrime(num, prime);
+
+//     printf("prime numbers between 1~%d : %d", num, count);
+//     return 0;
+// }
+
+
+// void descOrder(int *arr);
+
+// int main() {
+//     int arr[10];
+    
+//     printf("enter 10 numbers : ");
+//     for(int i = 0; i < 10; i++)
+//         scanf("%d", &arr[i]);
+    
+//     descOrder(arr);
+
+//     return 0;
+// }
+
+// void descOrder(int *arr) {
+//     int i, j, max, temp;
+
+//     for(i = 0; i < 10; i++) {
+//         for(j = i + 1; j < 10; j++) {
+//             if(arr[i] < arr[j]) {
+//                 temp = arr[i];
+//                 arr[i] = arr[j];
+//                 arr[j] = temp;
+//             }
+//         }
+//     }
+  
+//     for(i = 0; i < 10; i++)
+//         printf("%d ", arr[i]);
+//     printf("\n");
+// }
+
+
+// void addOne(int (*arr)[2]);
+
+// int main() {
+//     int arr[2][2] = {{1, 1}, {2, 2}};
+
+//     addOne(arr);
+
+//     return 0;
+// }
+
+// void addOne(int (*arr)[2]) {
+
+//     for(int i = 0; i < 2; i++)
+//         for(int j = 0 ; j < 2; j++) {
+//             arr[i][j]++;
+//             printf("%d ", arr[i][j]);
+//             }
+// }
+
+
+int max(int a, int b);
 int main() {
-    int *arr[3];
-    int a = 1, b = 2, c = 3;
-    arr[0] = &a;
-    arr[1] = &b;
-    arr[2] = &c;
+    int a, b;
+    int (*pmax)(int, int);
+    
+    pmax = max;
 
-    printf("a : %d, *arr[0] : %d \n", a, *arr[0]);
-    printf("b : %d, *arr[1] : %d \n", b, *arr[1]);
-    printf("c : %d, *arr[2] : %d \n", c, *arr[2]);
-
-    printf("&a : 0x%p, arr[0] : 0x%p \n", &a, arr[0]);
+    scanf("%d %d", &a, &b);
+    printf("max(a, b) : %d \n", max(a, b));
+    printf("pmax(a, b) : %d \n", pmax(a, b));
 
     return 0;
+}
+
+int max(int a, int b) {
+    if (a > b)
+        return a;
+    else
+        return b;
 }
