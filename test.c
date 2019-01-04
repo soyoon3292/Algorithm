@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include <stdlib.h>
 
 #define FALSE 0
 #define TRUE !FALSE
@@ -653,23 +654,78 @@ clock_t start, end;
 // }
 
 
-int max(int a, int b);
-int main() {
-    int a, b;
-    int (*pmax)(int, int);
+// int max(int a, int b);
+// int main() {
+//     int a, b;
+//     int (*pmax)(int, int);
     
-    pmax = max;
+//     pmax = max;
 
-    scanf("%d %d", &a, &b);
-    printf("max(a, b) : %d \n", max(a, b));
-    printf("pmax(a, b) : %d \n", pmax(a, b));
+//     scanf("%d %d", &a, &b);
+//     printf("max(a, b) : %d \n", max(a, b));
+//     printf("pmax(a, b) : %d \n", pmax(a, b));
+
+//     return 0;
+// }
+
+// int max(int a, int b) {
+//     if (a > b)
+//         return a;
+//     else
+//         return b;
+// }
+
+
+// int str_length(char *str);
+// int main() {
+//     char str[] = {"What is your name?"};
+
+//     printf("String length : %d \n", str_length(str));
+
+//     return 0;
+// }
+
+// int str_length(char *str) {
+//     int count = 0;
+//     while (str[count])
+//         count++;
+
+//     return count + 1;
+// }
+
+
+// int addOne(int *a);
+// struct TEST {
+//     int c;
+// };
+
+// int main() {
+//     struct TEST t;
+//     struct TEST *ptr = &t;
+
+//     ptr->c = 0;
+
+//     addOne(&t.c);
+
+//     printf("t.c : %d \n", t.c);
+
+//     addOne(&ptr->c);
+
+//     printf("t.c : %d \n", t.c);
+
+//     return 0;
+// }
+
+// int addOne(int *a) {
+//     *a += 1;
+
+//     return *a;
+// }
+
+
+int main(int argc, char *argv[]) {
+
+    printf("%d", (int)*argv[1]-48 + (int)*argv[2]-48);
 
     return 0;
-}
-
-int max(int a, int b) {
-    if (a > b)
-        return a;
-    else
-        return b;
 }
